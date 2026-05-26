@@ -1,4 +1,4 @@
 interface:
   display_name: "Work Review"
-  short_description: "Package repeat workflows across coding tools"
-  default_prompt: "Use $work-review to review my recent vibe coding work across available tools and identify high-confidence reusable workflows to package."
+  short_description: "Review workflows and personalize future help"
+  default_prompt: "Use $work-review to review my recent vibe coding work across available tools, identify high-confidence reusable workflows to package, and infer practical preferences for future assistance."

@@ -3,7 +3,7 @@
 Use this prompt in any AI coding or work assistant that can access recent work history, project files, commits, tickets, notes, or chat/task exports.
 
 ```text
-Look back over my recent vibe coding or AI-assisted work from the last 30 days, or all available history if shorter, and identify repeated manual workflows worth packaging.
+Look back over my recent vibe coding or AI-assisted work from the last 30 days, or all available history if shorter. Identify repeated manual workflows worth packaging, and infer practical work habits and preferences that future AI assistance should adapt to.
 
 Use available evidence in this order:
 - Current tool history and artifacts available to you, such as Codex sessions, Claude Code transcripts, WorkBuddy logs, Cursor chats, task summaries, repo history, issue/PR context, or files I provide.
@@ -12,6 +12,14 @@ Use available evidence in this order:
 - Existing reusable assets in my toolchain, such as skills, slash commands, playbooks, custom agents, plugins, scripts, templates, and automations, so you reuse or extend what already exists instead of duplicating it.
 
 Look broadly for work that is repeated, time-consuming, error-prone, context-heavy, or benefits from a consistent process. Include workflows across coding, debugging, research, writing, planning, communication, operations, analysis, and personal administration.
+
+Also look for personalization patterns that would help future work fit me better:
+- preferred working style, such as exploratory vs. direct implementation, plan-first vs. build-first, detail level, ambiguity tolerance, and pace;
+- quality bar, such as testing habits, visual polish expectations, review depth, citation needs, and risk sensitivity;
+- communication preferences, such as language, tone, update frequency, summary shape, and when to ask questions vs. make assumptions;
+- tool and workflow preferences, such as favorite tools, repo habits, branching/commit style, preferred packaging formats, and local vs. cloud workflows;
+- recurring friction, such as repeated blockers, context gaps, handoff pain, manual checks, sensitive areas, and tasks I often re-explain;
+- decision patterns, such as what I tend to approve, reject, defer, or ask to refine.
 
 Only act on a candidate when it:
 - occurred at least twice, or is clearly likely to recur and costly to repeat;
@@ -33,10 +41,20 @@ First produce a compact shortlist with:
 - recommended form: prompt, skill, slash command, playbook, agent, automation, extend existing, or skip
 - why it is or is not worth creating
 
+Then produce a compact personalization profile with:
+- habit or preference
+- supporting evidence and dates
+- confidence: high, medium, or low
+- future adaptation: a concrete instruction future agents can follow
+- memory candidate: whether it is stable enough to save as a durable preference, if the environment supports memory
+
 Then create only the high-confidence missing items I ask for or that are clearly implied by the request. Keep them narrow, practical, source-aware, and easy to validate. If the target tool is unclear, ask one concise question before creating files. If I want cross-tool reuse, create a portable Markdown prompt/playbook first and optionally add thin adapters for each platform.
+
+For personalization, do not overfit to one example, do not make psychological or intrusive claims, and mark low-confidence or sensitive inferences as "needs more evidence". Ask before saving durable memories or changing persistent preferences outside the current artifact.
 
 Finish with:
 - what you created or extended
+- what personalization guidance you identified
 - what you deliberately skipped
 - what needs more evidence before packaging
 ```

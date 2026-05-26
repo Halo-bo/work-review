@@ -1,13 +1,13 @@
 ---
 name: work-review
-description: Review recent vibe coding or AI-assisted work history across Codex, Claude Code, WorkBuddy, Cursor, GitHub, local repositories, notes, or other available tools to identify repeated manual workflows worth packaging into reusable prompts, skills, slash commands, custom agents, playbooks, or automations. Use when the user asks to audit recent work, mine coding-agent sessions for repeatable patterns, create a shortlist of reusable workflows, decide whether to build a skill/agent/automation/playbook, or perform a past-work retrospective for software, research, writing, operations, planning, or personal administration tasks.
+description: Review recent vibe coding or AI-assisted work history across Codex, Claude Code, WorkBuddy, Cursor, GitHub, local repositories, notes, or other available tools to identify repeated manual workflows worth packaging into reusable prompts, skills, slash commands, custom agents, playbooks, or automations, and infer the user's work habits, preferences, collaboration style, and personalization opportunities. Use when the user asks to audit recent work, mine coding-agent sessions for repeatable patterns, create a shortlist of reusable workflows, decide whether to build a skill/agent/automation/playbook, personalize future AI assistance, or perform a past-work retrospective for software, research, writing, operations, planning, or personal administration tasks.
 ---
 
 # Work Review
 
 ## Goal
 
-Turn recent AI-assisted work history from any accessible vibe coding environment into a compact, evidence-based shortlist of repeated workflows, then create only the high-confidence missing assets requested or clearly implied by the user.
+Turn recent AI-assisted work history from any accessible vibe coding environment into a compact, evidence-based shortlist of repeated workflows and a practical personalization profile, then create only the high-confidence missing assets requested or clearly implied by the user.
 
 Prefer the smallest portable form that fits the user's toolchain: a narrow skill, slash command, reusable prompt, playbook, or template when the work is a repeatable procedure; a custom agent/subagent when the work is a bounded specialist role or investigation; an automation when the work is a scheduled check, report, reminder, or monitor.
 
@@ -28,9 +28,33 @@ Do not invent history. If a platform-specific history source is unavailable, say
 2. Inventory candidate work across coding, debugging, design, research, writing, planning, communication, operations, analysis, and personal administration.
 3. Cluster similar tasks by stable inputs, repeated steps, decision points, and expected output.
 4. Check whether each cluster is already covered by an existing skill, slash command, prompt, agent, automation, script, template, playbook, or documented process in the relevant tool.
-5. Score each candidate using the gate below.
-6. Produce the shortlist before creating anything.
-7. Create or extend only high-confidence missing items, unless the user asks for analysis only.
+5. Infer user work habits and preferences from repeated choices, corrections, pacing, artifacts, and feedback.
+6. Score each candidate using the gate below.
+7. Produce the shortlist and personalization profile before creating anything.
+8. Create or extend only high-confidence missing items, unless the user asks for analysis only.
+
+## Personalization Profile
+
+Alongside packaging opportunities, identify how future assistance can better match the user's habits. Keep the profile evidence-based and useful, not psychological or intrusive.
+
+Look for:
+
+- Preferred working style: exploratory vs. direct implementation, plan-first vs. build-first, detail level, tolerance for ambiguity, pace.
+- Quality bar: testing habits, visual polish expectations, review depth, source citation needs, risk sensitivity.
+- Communication preferences: language, tone, update frequency, preferred summary shape, when to ask questions vs. make assumptions.
+- Tool and workflow preferences: favorite tools, repo habits, branching/commit style, preferred packaging formats, local vs. cloud workflows.
+- Recurring friction: repeated blockers, context gaps, handoff pain, manual checks, sensitive areas, tasks the user often re-explains.
+- Decision patterns: what the user tends to approve, reject, defer, or ask to refine.
+
+Represent each insight with:
+
+- **Observation**: what pattern appeared.
+- **Evidence**: sources, examples, and dates when available.
+- **Confidence**: high, medium, or low.
+- **Future adaptation**: a concrete instruction future agents can follow.
+- **Memory candidate**: whether it is stable enough to save as a user preference, if the environment supports memory.
+
+Do not overfit to one example. Mark low-confidence or sensitive inferences as "needs more evidence". Ask before saving durable memories or making personalization changes outside the current artifact.
 
 ## Packaging Gate
 
@@ -51,9 +75,15 @@ First produce a compact shortlist. Use this table when possible:
 | Repeated workflow | Evidence and dates | Frequency / confidence | Recommended form | Why / why not |
 |---|---|---:|---|---|
 
+Then produce a compact personalization profile. Use this table when possible:
+
+| Habit / preference | Evidence and dates | Confidence | Future adaptation | Memory candidate |
+|---|---|---:|---|---|
+
 Then give a decision:
 
 - **Create or extend now**: high-confidence missing items in the user's target toolchain.
+- **Personalize future assistance**: high-confidence adaptation rules to use in future work.
 - **Deliberately skip**: candidates that fail the gate.
 - **Needs more evidence**: candidates to revisit after more examples.
 
@@ -82,13 +112,20 @@ For automations:
 
 If the target tool is unclear, ask one concise question about the intended toolchain before creating files. If the user wants cross-tool reuse, create a portable Markdown prompt/playbook first and optionally add thin adapters for each platform.
 
+For personalization artifacts:
+
+- Prefer a small `personalization.md`, memory proposal, agent instruction, or tool-specific preference file when the user asks to preserve preferences.
+- Separate observed evidence from recommended behavior.
+- Keep preferences editable and avoid presenting them as fixed traits.
+- Do not store sensitive or speculative inferences without explicit user approval.
+
 ## Validation
 
 Before finishing:
 
 - Verify created or changed files exist and are valid for the host system.
 - Check for overlap with existing assets one more time.
-- Report what was created or extended, what was skipped, and what needs more evidence.
+- Report what was created or extended, what personalization guidance was identified, what was skipped, and what needs more evidence.
 - If the user's language is not English, answer the retrospective in the user's language unless they ask otherwise.
 
 ## Reference

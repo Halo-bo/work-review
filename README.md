@@ -1,6 +1,6 @@
 # Work Review
 
-Work Review is a portable prompt and Codex skill for reviewing recent vibe coding or AI-assisted work, finding repeated manual workflows, and deciding what should become a reusable prompt, skill, slash command, playbook, custom agent, or automation.
+Work Review is a portable prompt and Codex skill for reviewing recent vibe coding or AI-assisted work, finding repeated manual workflows, learning practical work habits, and deciding what should become a reusable prompt, skill, slash command, playbook, custom agent, automation, or personalization rule.
 
 It is designed to work across tools such as Codex, Claude Code, WorkBuddy, Cursor, GitHub, local repositories, notes, tickets, and exported chats.
 
@@ -13,6 +13,7 @@ Work Review helps an AI assistant:
 - Use evidence rather than guesses.
 - Check whether existing reusable assets already cover the workflow.
 - Recommend the smallest useful form: prompt, skill, slash command, playbook, agent, automation, extend existing, or skip.
+- Infer practical preferences that help future AI assistants match the user's habits, communication style, quality bar, and toolchain.
 - Create only high-confidence missing assets when asked.
 
 ## Quick Start
@@ -42,11 +43,17 @@ The assistant first produces a compact shortlist:
 | Repeated workflow | Evidence and dates | Frequency / confidence | Recommended form | Why / why not |
 |---|---|---:|---|---|
 
+It also produces a practical personalization profile:
+
+| Habit / preference | Evidence and dates | Confidence | Future adaptation | Memory candidate |
+|---|---|---:|---|---|
+
 Then it reports:
 
 - what should be created or extended now
+- what personalization guidance should be used in future work
 - what should be deliberately skipped
-- what needs more evidence before packaging
+- what needs more evidence before packaging or personalization
 
 ## Files
 
@@ -60,6 +67,7 @@ Then it reports:
 - Evidence first.
 - Smallest useful reusable asset.
 - Reuse or extend before duplicating.
+- Personalize future help from evidence, not guesses.
 - Skip speculative or overly broad packaging.
 - Keep outputs narrow, practical, source-aware, and easy to validate.
 
