@@ -12,8 +12,9 @@ Work Review helps an AI assistant:
 - Identify repeated, time-consuming, error-prone, or context-heavy workflows.
 - Use evidence rather than guesses.
 - Check whether existing reusable assets already cover the workflow.
+- Recognize the user's working habits, preferences, collaboration style, quality bar, and recurring friction points.
+- Turn those patterns into concrete future-adaptation guidance for AI assistants.
 - Recommend the smallest useful form: prompt, skill, slash command, playbook, agent, automation, extend existing, or skip.
-- Infer practical preferences that help future AI assistants match the user's habits, communication style, quality bar, and toolchain.
 - Create only high-confidence missing assets when asked.
 
 ## Quick Start
